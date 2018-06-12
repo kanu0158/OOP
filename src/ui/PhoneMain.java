@@ -7,13 +7,14 @@ import domain.*;
  * 0.통화종료 1.집전화기
  */
 enum PhoneButt {
-	EXIT, TELEPHONE, CELLPHONE,SMARTPHONE;
+	EXIT, TELEPHONE, CELLPHONE,IPHONE;
 }
 public class PhoneMain {
 	public static void main(String[] args) {
-		PhoneButt[] buttons = {PhoneButt.EXIT,PhoneButt.TELEPHONE,PhoneButt.CELLPHONE,PhoneButt.SMARTPHONE};
+		PhoneButt[] buttons = {PhoneButt.EXIT,PhoneButt.TELEPHONE,PhoneButt.CELLPHONE,PhoneButt.IPHONE};
 		Phone phone = null;
 		CellPhone cp = null;
+		IPhone ip = null;
 		while (true) {
 			switch ((PhoneButt) JOptionPane.showInputDialog(null, "MAIN PAGE", "SELECT MENU", JOptionPane.QUESTION_MESSAGE,
 					null, buttons, null)) {
@@ -31,15 +32,14 @@ public class PhoneMain {
 				cp.setName(JOptionPane.showInputDialog("이름"));
 				cp.setPhoneNum(JOptionPane.showInputDialog("전화번호"));
 				cp.setCall(JOptionPane.showInputDialog("통화내용"));
-				cp.setPortable(true);
 				JOptionPane.showMessageDialog(null, cp.toString());
 				break;
-			case SMARTPHONE:
-				phone = new Phone();
-				phone.setName(JOptionPane.showInputDialog("이름"));
-				phone.setPhoneNum(JOptionPane.showInputDialog("전화번호"));
-				phone.setCall(JOptionPane.showInputDialog("통화내용"));
-				JOptionPane.showMessageDialog(null, phone.toString());
+			case IPHONE:
+				ip = new IPhone();
+				ip.setName(JOptionPane.showInputDialog("이름"));
+				ip.setPhoneNum(JOptionPane.showInputDialog("전화번호"));
+				ip.setData(JOptionPane.showInputDialog("통화내용"));
+				JOptionPane.showMessageDialog(null, ip.toString());
 				break;
 			default:
 				break;
