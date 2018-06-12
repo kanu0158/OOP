@@ -7,14 +7,15 @@ import domain.*;
  * 0.통화종료 1.집전화기
  */
 enum PhoneButt {
-	EXIT, TELEPHONE, CELLPHONE,IPHONE;
+	EXIT, TELEPHONE, CELLPHONE,IPHONE, GALAXYPHONE;
 }
 public class PhoneMain {
 	public static void main(String[] args) {
-		PhoneButt[] buttons = {PhoneButt.EXIT,PhoneButt.TELEPHONE,PhoneButt.CELLPHONE,PhoneButt.IPHONE};
+		PhoneButt[] buttons = {PhoneButt.EXIT,PhoneButt.TELEPHONE,PhoneButt.CELLPHONE,PhoneButt.IPHONE,PhoneButt.GALAXYPHONE};
 		Phone phone = null;
 		CellPhone cp = null;
 		IPhone ip = null;
+		GalaxyPhone gp = null;
 		while (true) {
 			switch ((PhoneButt) JOptionPane.showInputDialog(null, "MAIN PAGE", "SELECT MENU", JOptionPane.QUESTION_MESSAGE,
 					null, buttons, null)) {
@@ -40,6 +41,14 @@ public class PhoneMain {
 				ip.setPhoneNum(JOptionPane.showInputDialog("전화번호"));
 				ip.setData(JOptionPane.showInputDialog("통화내용"));
 				JOptionPane.showMessageDialog(null, ip.toString());
+				break;
+			case GALAXYPHONE:
+				gp = new GalaxyPhone();
+				gp.setName(JOptionPane.showInputDialog("이름"));
+				gp.setPhoneNum(JOptionPane.showInputDialog("전화번호"));
+				gp.setSize();
+				gp.setData(JOptionPane.showInputDialog("통화내용"));
+				JOptionPane.showMessageDialog(null, gp.toString());
 				break;
 			default:
 				break;
