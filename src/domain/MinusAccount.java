@@ -5,6 +5,6 @@ public class MinusAccount extends Account {
 	public int debt; // 대출금 (대출하는기능) 대출할건지 묻고
 	@Override
 	public void setAccountType() {
-		super.accountType = "마이너스통장";
+		super.accountType = ACCOUNT_TYPE;
 	}
 }

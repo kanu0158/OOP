@@ -37,7 +37,7 @@ public class Account {
 		this.pass = pass;
 	}
 	public void setAccountType() {
-		this.accountType = "기본통장";
+		this.accountType = ACCOUNT_TYPE;
 	}
 	public void setCreateDate() {
 		Date now = new Date();
@@ -50,6 +50,9 @@ public class Account {
 	public String getName() {
 		return name;
 	}
+	public String getAccountType() {
+		return accountType;
+	}
 	public String getAccountNo() {
 		return accountNo;
 	}
@@ -57,6 +60,6 @@ public class Account {
 		return createDate;
 	}
 	public String toString() {
-		return String.format("%s\n%s\n계좌번호: %s\n이름: %s\n생성일: %s\n잔액: %d\n",BANK_NAME, ACCOUNT_TYPE,getAccountNo(),getName(),getCreateDate(),getMoney());
+		return String.format("%s\n%s\n계좌번호: %s\n이름: %s\n생성일: %s\n잔액: %d\n",BANK_NAME, getAccountType(),getAccountNo(),getName(),getCreateDate(),getMoney());
 	}
 }
